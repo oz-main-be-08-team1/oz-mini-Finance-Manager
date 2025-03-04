@@ -1,1 +1,9 @@
-![스크린샷 2025-03-04 오후 3.37.17.png](../../../../../../var/folders/k3/yv3yfrcn4kxbh9cxpdrd90240000gn/T/TemporaryItems/NSIRD_screencaptureui_2oFMBh/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-03-04%20%EC%98%A4%ED%9B%84%203.37.17.png)
+### ERD
+
+![ERD 이미지](media/ERD.png)
+
+### Mdoel Test
+
+![Accounts 이미지](media/accounts.png)
+![User 이미지](media/user.png)
+![Transaction 이미지](media/transaction.png)
