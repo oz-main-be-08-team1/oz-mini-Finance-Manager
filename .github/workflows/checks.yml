@@ -70,6 +70,9 @@ jobs:
           until pg_isready -h localhost -p ${{ secrets.DB_PORT }} -U ${{ secrets.DB_USER }}; do
             sleep 1
           done
+      - name: Wait for DB
+        run: |
+          poetry run python manage.py wait_for_db
 
       # 8. Django 마이그레이션 실행
       - name: Run Django Migration
@@ -78,9 +81,7 @@ jobs:
           poetry run python manage.py migrate
 
       # 9. Django 테스트 실행 (도전 미션)
-      - name: Wait for DB
-        run: |
-          poetry run python manage.py wait_for_db
+
 
       - name: Test python project
         run: |
