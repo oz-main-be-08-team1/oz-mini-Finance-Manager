@@ -33,4 +33,4 @@ class Analysis(models.Model):
         verbose_name_plural = f"{verbose_name} 목록"
 
     def __str__(self):
-        return self.analysis_id
+        return f'{self.analysis_id}'

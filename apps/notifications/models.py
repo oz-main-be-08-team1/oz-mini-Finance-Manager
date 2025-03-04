@@ -20,4 +20,4 @@ class Notification(models.Model):
         verbose_name_plural = f"{verbose_name} 목록"
 
     def __str__(self):
-        return self.notification_id
+        return f'{self.notification_id}'
