@@ -194,7 +194,7 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
-
+mi
 # IPython
 profile_default/
 ipython_config.py
