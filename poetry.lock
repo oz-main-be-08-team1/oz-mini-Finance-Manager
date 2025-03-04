@@ -89,17 +89,6 @@ files = [
 ]
 
 [[package]]
-name = "dependency"
-version = "0.0.3"
-description = "A dependency injection framework for Python."
-optional = false
-python-versions = "*"
-groups = ["main"]
-files = [
-    {file = "dependency-0.0.3.tar.gz", hash = "sha256:41c26885d28a71a07e4605cdfa564b73a49fe9b29a4479207e14c7fda0e39d64"},
-]
-
-[[package]]
 name = "django"
 version = "5.1.6"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
@@ -562,4 +551,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11"
-content-hash = "2332e0295f336d56f1b6b4ccf0d353defbac818d5568114e8a1086b4736f7730"
+content-hash = "6fb162a07ddb8903a0d385cc949fe7a6e11385f4c883736e755c1473ca7bae25"
