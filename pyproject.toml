@@ -1,0 +1,25 @@
+[project]
+name = "oz"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "hak1319",email = "gkr054@naver.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "django (>=5.1.6,<6.0.0)",
+    "psycopg2-binary (>=2.9.10,<3.0.0)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+drf-yasg = "^1.21.9"
+black = "^25.1.0"
+isort = "^6.0.1"
+pytest = "^8.3.5"
+
