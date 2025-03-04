@@ -7,3 +7,5 @@
 ![Accounts 이미지](media/accounts.png)
 ![User 이미지](media/user.png)
 ![Transaction 이미지](media/transaction.png)
+![analysis 이미지](media/analysis.png)
+![notification 이미지](media/notification.png)
