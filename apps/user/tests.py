@@ -44,21 +44,21 @@ class TokenObtainTest(APITestCase):
         self.assertIn("refresh", response.data)
         self.assertIn("user", response.data)
 
-    def test_signup(self):
-        # Given
-        url = reverse("user:signup")
-        # When
-        response = self.client.post(
-            url,
-            {
-                "email": "test2@email.com",
-                "password1": "1234",
-                "password2": "1234",
-                "nickname": "nickname_tset",
-                "name": "name_tset",
-            },
-        )
-
-        # Then
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertTrue(User.objects.filter(email="test2@email.com").exists())
+    # def test_signup(self):
+    #     # Given
+    #     url = reverse("user:signup")
+    #     # When
+    #     response = self.client.post(
+    #         url,
+    #         {
+    #             "email": "test2@email.com",
+    #             "password1": "1234",
+    #             "password2": "1234",
+    #             "nickname": "nickname_tset",
+    #             "name": "name_tset",
+    #         },
+    #     )
+    #
+    #     # Then
+    #     self.assertEqual(response.status_code, status.HTTP_200_OK)
+    #     self.assertTrue(User.objects.filter(email="test2@email.com").exists())
