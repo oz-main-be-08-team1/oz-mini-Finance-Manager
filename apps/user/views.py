@@ -1,13 +1,8 @@
-from itertools import permutations
-
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render
-from rest_framework import permissions, serializers, status
+from rest_framework import permissions, status
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenObtainPairView
 

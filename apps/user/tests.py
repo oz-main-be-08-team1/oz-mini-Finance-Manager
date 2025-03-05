@@ -1,5 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase
+from django.urls import reverse
+from rest_framework import status
+from rest_framework.test import APITestCase
 from rest_framework_simplejwt.tokens import RefreshToken
 
 # Create your tests here.
@@ -17,12 +20,6 @@ class Test_User_Model(TestCase):
         self.assertEqual(self.admin_user.is_admin, True)
         self.assertEqual(self.user.is_admin, False)
         self.assertEqual(User.objects.count(), 2)
-
-
-from django.contrib.auth import get_user_model
-from django.urls import reverse
-from rest_framework import status
-from rest_framework.test import APITestCase
 
 
 class TokenObtainTest(APITestCase):
