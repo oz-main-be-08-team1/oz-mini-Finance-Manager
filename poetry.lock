@@ -115,7 +115,7 @@ version = "3.15.2"
 description = "Web APIs for Django, made easy."
 optional = false
 python-versions = ">=3.8"
-groups = ["dev"]
+groups = ["main", "dev"]
 files = [
     {file = "djangorestframework-3.15.2-py3-none-any.whl", hash = "sha256:2b8871b062ba1aefc2de01f773875441a961fefbf79f5eed1e32b2f096944b20"},
     {file = "djangorestframework-3.15.2.tar.gz", hash = "sha256:36fe88cd2d6c6bec23dca9804bab2ba5517a8bb9d8f47ebc68981b56840107ad"},
@@ -551,4 +551,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11"
-content-hash = "6fb162a07ddb8903a0d385cc949fe7a6e11385f4c883736e755c1473ca7bae25"
+content-hash = "775e695cdb2f9bd28f6af325389ba1817aafd7c086912c8ad44e2f0bd5a3ca5e"
