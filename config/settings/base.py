@@ -141,9 +141,8 @@ AUTH_USER_MODEL = "user.User"
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "apps.user.authentication.CookieJWTAuthentication",  # 쿠키 기반 JWT 인증 추가
-        "rest_framework.authentication.SessionAuthentication",  # Django 기본 세션 인증
-        "rest_framework.authentication.BasicAuthentication",  # 기본 HTTP 인증
+        # "apps.user.authentication.CookieJWTAuthentication",  # 쿠키 기반 JWT 인증 추가
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
 }
 
