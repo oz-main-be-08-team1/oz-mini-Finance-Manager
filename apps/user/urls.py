@@ -1,6 +1,7 @@
 from django.urls.conf import path
 
-from apps.user.views import CustomTokenObtainView, LogoutView, ProfileView, SignupView
+from apps.user.views import (CustomTokenObtainView, LogoutView, ProfileView,
+                             SignupView)
 
 app_name = "user"
 
