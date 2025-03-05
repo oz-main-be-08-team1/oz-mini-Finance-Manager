@@ -36,7 +36,6 @@ class SignupSerializer(serializers.ModelSerializer):
             "nickname",
             "name",
             "phone_number",
-            "is_active",
         )
 
     def validate(self, data):
