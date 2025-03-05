@@ -3,16 +3,16 @@ from itertools import permutations
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render
-from rest_framework import serializers, status
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-from rest_framework_simplejwt.views import TokenObtainPairView
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import permissions
-from apps.user.serializers import CustomTokenObtainPairSerializer, SignupSerializer, UserProfileSerializer
-from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework import permissions, serializers, status
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.views import TokenObtainPairView
 
+from apps.user.serializers import (CustomTokenObtainPairSerializer,
+                                   SignupSerializer, UserProfileSerializer)
 
 # Create your views here.
 User = get_user_model()
@@ -51,6 +51,7 @@ class SignupView(APIView):
             return Response({"msg": "회원가입 성공"}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 class LogoutView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
@@ -64,6 +65,7 @@ class LogoutView(APIView):
         except Exception as e:
             return Response({"error": "잘못된 토큰입니다."})
 
+
 class ProfileView(RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserProfileSerializer
@@ -76,5 +78,3 @@ class ProfileView(RetrieveUpdateDestroyAPIView):
         user = self.get_object()
         user.delete()
         return Response({"message": "Deleted successfully"}, status=status.HTTP_200_OK)
-
-
