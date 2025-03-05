@@ -11,8 +11,11 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenObtainPairView
 
-from apps.user.serializers import (CustomTokenObtainPairSerializer,
-                                   SignupSerializer, UserProfileSerializer)
+from apps.user.serializers import (
+    CustomTokenObtainPairSerializer,
+    SignupSerializer,
+    UserProfileSerializer,
+)
 
 # Create your views here.
 User = get_user_model()
