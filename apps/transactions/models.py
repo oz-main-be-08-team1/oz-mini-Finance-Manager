@@ -31,5 +31,5 @@ class Transaction_History(models.Model):
     transaction_timestamp = models.DateTimeField(default=datetime.now)
 
     account = models.ForeignKey(
-        Account, on_delete=models.CASCADE, related_name="accounts"
+        Account, on_delete=models.CASCADE, related_name="transactions"
     )
