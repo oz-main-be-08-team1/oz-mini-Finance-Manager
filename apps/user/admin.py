@@ -3,18 +3,19 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
 from apps.user.models import User
 
-# Register your models here.
-
 
 @admin.register(User)
 class UserAdmin(BaseUserAdmin):
     list_display = ("email", "nickname", "phone_number", "is_active", "is_staff")
-    list_filter = ("is_active", "is_staff")
+    list_filter = (
+        "is_active",
+        "is_staff",
+    )  # 'is_staff'를 제거하고, 필터링할 수 있는 필드만 설정
     search_fields = ("email", "nickname", "phone_number")
     ordering = ("email", "nickname")
 
     def get_fieldsets(self, request, obj=None):
-        # 슈퍼유저 is_admin 보이게 설정
+        # 슈퍼유저만 is_admin 보이게 설정
         if request.user.is_superuser:
             return (
                 (None, {"fields": ("email", "password")}),
