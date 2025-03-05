@@ -1,6 +1,7 @@
+from datetime import datetime
+
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 from django.db import models
-from django.utils.timezone import now
 
 
 class UserManager(BaseUserManager):
@@ -13,7 +14,7 @@ class UserManager(BaseUserManager):
             email=self.normalize_email(email),
         )
         user.set_password(password)
-        user.is_active = False
+        user.is_active = True
         user.save()
         return user
 
@@ -32,7 +33,7 @@ class User(AbstractBaseUser):
     nickname = models.CharField(max_length=100)
     name = models.CharField(max_length=20)
     phone_number = models.CharField(max_length=20)
-    last_login = models.DateTimeField(default=now)
+    last_login = models.DateTimeField(default=datetime.now)
     is_staff = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
