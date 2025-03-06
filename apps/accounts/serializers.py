@@ -4,6 +4,8 @@ from .models import Account
 
 
 class AccountSerializer(serializers.ModelSerializer):
+    account_number = serializers.SerializerMethodField()
+
     class Meta:
         model = Account
         fields = [
@@ -15,6 +17,14 @@ class AccountSerializer(serializers.ModelSerializer):
             "user",
         ]
         read_only_fields = ["balance", "user"]
+
+    """계좌번호 뒷4자리 마스킹"""
+
+    def get_account_number(self, instance):
+        account_number = instance.account_number
+        if len(account_number) >= 4:
+            return account_number[:-4] + "****"
+        return account_number
 
     def create(self, validated_data):
         validated_data["balance"] = 0.00
